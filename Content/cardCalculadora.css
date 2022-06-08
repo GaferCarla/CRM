@@ -1,0 +1,188 @@
+﻿
+ #image #clic {
+    position: absolute;
+    width: 80px;
+    left: 87%;
+    top: 5%;
+ 
+    
+}
+
+#image {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-position-x:center !important;
+    background-size: auto 100%  !important;
+    background: url('https://vivegrow.com/00_JP_Mailing/Misc/Calculadora.png') no-repeat top left;
+}
+
+
+
+#info {
+    text-align: center
+}
+
+.cardCalculadora .btn {
+    padding: 10px 50px;
+    font-size: 25px;
+    font-weight: 600;
+    background:  #7c1cd4;
+    color: #fff;
+    margin-bottom: 5%
+}
+
+    .cardCalculadora .btn:hover {
+        background: #32a0e9
+    }
+
+.offer {
+    font-size: 4rem;
+    line-height:4.5rem !important;
+}
+
+#mobile-clic {
+    display: none
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    #image #clic {
+        width: 70px;
+        left: 85%
+    }
+
+    .offer {
+        font-size: 2rem;
+    }
+
+    .cardCalculadora .btn {
+        font-size: 20px
+    }
+
+    #mobile-clic {
+        display: none
+    }
+
+    #image {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background-size: 100% auto !important;
+    }
+}
+
+@media(min-width:431px) and (max-width:767px) {
+    #mobile-clic {
+        display: none
+    }
+
+    #image {
+        display: none
+    }
+
+    #info {
+        border-radius: 10px;
+        padding: 90px 0 10px;
+        background: url('https://img.freepik.com/free-vector/paper-style-white-monochrome-background_52683-66443.jpg?t=st=1651023711~exp=1651024311~hmac=c22eac51f3413ea0b2d81a1212ea0ce734a0a58caaa3bbf5d558e7c873319fef&w=740') no-repeat center
+    }
+
+    .cardCalculadora .container {
+        max-width: 100%;
+        padding: 0;
+        height: 580px;
+        color: #fff;
+        margin-top: 10px;
+        margin-left: 20px
+    }
+}
+
+@media(max-width:431px) {
+    .cardCalculadora .container {
+        max-width: 100%;
+        padding: 0;
+        height: 580px;
+        color: #fff;
+        margin-top: 10px;
+        margin-left: 20px
+    }
+
+    #image {
+        display: none
+    }
+
+    .coupon {
+        color: #fff
+    }
+
+    #info {
+        border-radius: 10px;
+        padding: 180px 0 10px;
+        background: url('https://img.freepik.com/free-vector/paper-style-white-monochrome-background_52683-66443.jpg?t=st=1651023711~exp=1651024311~hmac=c22eac51f3413ea0b2d81a1212ea0ce734a0a58caaa3bbf5d558e7c873319fef&w=740') no-repeat center
+
+    }
+
+    .cardCalculadora .btn {
+        background-color: #eee;
+        color: #333
+    }
+
+        .cardCalculadora .btn:hover {
+            background-color: #7311cf;
+            color: #fff
+        }
+
+    #info #mobile-clic {
+        display: block;
+        z-index: 1
+    }
+
+        #info #mobile-clic img {
+            position: absolute;
+            width: 300px;
+            top: 10%;
+            left: 10%
+        }
+}
+
+@media(max-width:340px) {
+    .offer {
+        font-size: 2.9rem
+    }
+
+    .cardCalculadora .container {
+        height: 500px
+    }
+
+    #info #mobile-clic img {
+        width: 200px
+    }
+}
+
+.cardCalculadora  .row:hover #clic {
+    animation: iconClic 1s cubic-bezier(.36,.07,.57,.99) infinite;
+}
+
+@keyframes iconClic{
+    0% {
+        transform: scale(1.2);
+    }
+
+    20% {
+        transform: scale(1.2);
+    }
+
+    22.5% {
+        transform: scale(1);
+    }
+
+    32.5% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+

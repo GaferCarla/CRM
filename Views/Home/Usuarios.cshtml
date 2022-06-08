@@ -1,0 +1,217 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+    @Styles.Render("~/Content/usuariosStyle.css");
+    @Styles.Render("~/Content/webPixel.css");
+    @Styles.Render("~/Content/dataTables.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+
+}
+
+<div class="container py-4 bg-white" id="usuarios">
+
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Home</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspUsuarios</span></li>
+            </ol>
+        </nav>
+
+    </div>
+
+    <div class=" flex-grow-1 overflow-visible">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center mb-sm-4">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight" id="titleCRM">Usuarios</h1>
+                        </div> <!-- Actions -->
+                        <div class="col-sm-6 col-12 text-sm-end mb-sm-0 mb-4">
+                            <div class="mx-n1">
+                                <a href="#newUserModal" data-toggle="modal" class="btn d-inline-flex btn-sm btn-primary mx-1" style="color:white" id="buttonNew">
+
+                                    <div class="rowB">
+                                        <svg class="pe-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                        </svg>
+
+                                        Nuevo
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header> <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+
+
+             
+
+                <div class="card shadow border-0 mb-7 pl-2 pr-2">
+                    <div class="card-header row">
+                        <div class="col-12 col-sm-6">
+                            <h4>Registros</h4>
+                        </div>
+                        <!-- Filter/Search-->
+                        <div class="col-12 col-sm-6">
+                            <input type="text" id="myInputSearch" onkeyup="myFilterFunction()" placeholder="Busca por usuario..." title="Type in a name">
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- CRUD -->
+                    <div class="table-responsive">
+                        <table class="table table-hover table-nowrap display " id="prospectsRegister" data-toggle="table" data-search="true" data-filter-control="true">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th onclick="sortTable(0)" class="userField">
+                                        Usario
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(1)" class="rolField">
+                                        Rol
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="userField">Visitante</td>
+                                    <td class="rolField text-center">Admin_SyS</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verUsuario","Home")" class="btn btn-sm btn-neutral">Edit</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="userField">admin</td>
+                                    <td class="rolField text-center">Admin_SyS</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verUsuario","Home")" class="btn btn-sm btn-neutral">Edit</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer border-0 py-5"> <span class="text-muted text-sm">Mostrando 10 registros de <br />250 resultados encontrados</span> </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<div id="deleteEmployeeModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar datos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que quieres eliminar los datos de esta persona?</p>
+                    <p class="text-warning"><small>Esta acción no podrá ser deshecha.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="newUserModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog login animated">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                
+            </div>
+            <div class="modal-body">
+                <div class="box">
+                    <div class="content px-2">
+                        <div class="error"></div>
+                        <div class="form loginBox">
+                            <form method="" action="" > <input id="user" class="form-control mb-4" type="text" placeholder="Usuario" name="user"><input id="password" class="form-control mb-4" type="password" placeholder="Password" name="password"> <input id="password_confirmation" class="form-control mb-6" type="password" placeholder="Repeat Password" name="password_confirmation"><input class="btn btn-success" style="width: 100%; background-color: #5e279a; border:none " type="button" value="Crear usuario" name="commit" onclick=""> </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12 text-center"> <span>Ya tienes cuenta pero ¿<a href="#">no recuerdas tu contraseña</a> ?</span> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/sortTableHeaderScript.js")
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/boosted/4.1.1/js/boosted.bundle.min.js'></script>
+
+
+
+<script>
+    function myFilterFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInputSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("prospectsRegister");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    $("input:checkbox:not(:checked)").each(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).hide();
+    });
+
+    $("input:checkbox").click(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).toggle();
+    });
+</script>
+

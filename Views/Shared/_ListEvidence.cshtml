@@ -1,0 +1,213 @@
+﻿<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+<style>
+    .Rtable-cell ul li {
+        list-style: none;
+    }
+
+
+    .lead {
+        font-size: 21px;
+    }
+
+    .large {
+        font-size: 20px;
+    }
+
+    table td:last-child {
+        min-width: 100px !important;
+    }
+
+
+
+</style>
+<div class="container py-4">
+
+    <div class="row">
+        <table class="Rtable js-RtableAccordions">
+            <thead class="thead-light">
+                <tr>
+                    <th>Nombre del archivo</th>
+                    <th>Variables</th>
+                    <th>Fecha carga</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-striped">
+                <tr>
+                    <td>
+                        <div class="resume">
+                            <p data-label="Nombre:">*****</p>
+                            <p class="text-muted" data-label="Tipo de archivo:"> <button class="Accordion u-hiddenLarge" role="tab" aria-selected="true"></button> ******************</p>
+                        </div>
+                    </td>
+
+
+                    <td class="Rtable-cell" data-label="Variables:"><ul><li>*****</li> <li>*****</li> <li>*****</li> <li>*****</li></ul></td>
+                    <td class="Rtable-cell" data-label="Fecha de carga:">21/06/2021</td>
+
+                    <td>
+                        <div class="action row" align="center">
+                            <div class="col py-2 ">
+                                <a href='@Url.Action("Añadir_evidencia","Home")' data-label="Subir">
+                                    <i class='bx bx-upload large'></i>
+                                </a>
+                            </div>
+                            <div class="col py-2">
+                                <a href="" data-label="Descargar">
+                                    <i class='bx bxs-file-blank text-primary large '></i>
+                                </a>
+                            </div>
+
+
+                            <div class="col py-2">
+                                <a data-label="Eliminar" href="#deleteModal" data-toggle="modal">
+                                    <i class='bx bxs-trash-alt large'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="resume">
+                            <p data-label="Nombre:">*****</p>
+                            <p class="text-muted" data-label="Tipo de archivo:"> <button class="Accordion u-hiddenLarge" role="tab" aria-selected="true"></button> ******************</p>
+                        </div>
+                    </td>
+
+
+                    <td class="Rtable-cell" data-label="Variables:"><ul><li>*****</li> <li>*****</li> <li>*****</li> <li>*****</li></ul></td>
+                    <td class="Rtable-cell" data-label="Fecha de carga:">21/06/2021</td>
+
+                    <td>
+                        <div class="action row" align="center">
+                            <div class="col py-2 ">
+                                <a href='@Url.Action("Añadir_evidencia","Home")' data-label="Subir">
+                                    <i class='bx bx-upload large'></i>
+                                </a>
+                            </div>
+                            <div class="col py-2">
+                                <a href="" data-label="Descargar">
+                                    <i class='bx bxs-file-blank text-primary large '></i>
+                                </a>
+                            </div>
+
+
+                            <div class="col py-2">
+                                <a data-label="Eliminar" href="#deleteModal" data-toggle="modal">
+                                    <i class='bx bxs-trash-alt  large'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="resume">
+                            <p data-label="Nombre:">*****</p>
+                            <p class="text-muted" data-label="Tipo de archivo:"> <button class="Accordion u-hiddenLarge" role="tab" aria-selected="true"></button> ******************</p>
+                        </div>
+                    </td>
+
+
+                    <td class="Rtable-cell" data-label="Variables:"><ul><li>*****</li> <li>*****</li> <li>*****</li> <li>*****</li></ul></td>
+                    <td class="Rtable-cell" data-label="Fecha de carga:">21/06/2021</td>
+
+                    <td>
+                        <div class="action row" align="center">
+                            <div class="col py-2 ">
+                                <a href='@Url.Action("Añadir_evidencia","Home")' data-label="Subir">
+                                    <i class='bx bx-upload large'></i>
+                                </a>
+                            </div>
+                            <div class="col py-2">
+                                <a href="" data-label="Descargar">
+                                    <i class='bx bxs-file-blank text-primary large '></i>
+                                </a>
+                            </div>
+
+
+                            <div class="col py-2">
+                                <a data-label="Eliminar" href="#deleteModal" data-toggle="modal">
+                                    <i class='bx bxs-trash-alt  large'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="deleteModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Eliminar datos</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Estás seguro que quieres eliminar esta evidencia?</p>
+                        <p class="text-warning"><small>Esta acción no podrá ser deshecha.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+
+
+        $.fn.responsiveTable = function () {
+            var toggleColumns = function ($table) {
+                var selectedControls = [];
+                $table.find(".Accordion").each(function () {
+                    selectedControls.push($(this).attr("aria-selected"));
+                });
+                var cellCount = 0, colCount = 0;
+                var setNum = $table.find(".Rtable-cell").length / Math.max($table.find(".Accordion").length);
+                $table.find(".Rtable-cell").each(function () {
+                    $(this).addClass("u-hiddenSmall");
+                    if (selectedControls[colCount] === "false") $(this).removeClass("u-hiddenSmall");
+                    cellCount++;
+                    if (cellCount % setNum === 0) colCount++;
+                });
+            };
+            $(this).each(function () { toggleColumns($(this)); });
+
+
+
+
+
+            $(this).find(".Accordion").click(function () {
+                $(this).attr("aria-selected", $(this).attr("aria-selected") !== "true");
+                toggleColumns($(this).parents(".Rtable"));
+            });
+
+
+
+
+
+        };
+        $(".js-RtableAccordions").responsiveTable();
+    });
+</script>

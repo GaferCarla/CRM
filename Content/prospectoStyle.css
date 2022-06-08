@@ -1,0 +1,101 @@
+﻿
+.page-container h1,
+.page-container h2,
+.page-container h3,
+.page-container h4,
+.page-container h5,
+.page-container h6,
+.page-container p {
+    color: rgb(0,0,0,0.5)
+}
+
+
+
+
+.page-container {
+    background: #fff;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-right: 15px !important;
+    padding-top: 15px !important;
+}
+
+
+
+th.hide_me, td.hide_me {
+    display: none;
+}
+
+#prospectRegister td{
+    color: rgb(0,0,0,0.5) !important;
+}
+
+
+#prospectos .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+#prospectos .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #525f7f;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
+}
+
+@media(prefers-reduced-motion: reduce) {
+    #prospectos .nav-link {
+        transition: none
+    }
+}
+
+#prospectos .nav-link:hover, #prospectos .nav-link:focus {
+    color: #5c60f5
+}
+
+#prospectos .nav-link.disabled {
+    color: #abb6c5;
+    pointer-events: none;
+    cursor: default
+}
+
+#prospectos .nav-tabs {
+    border-bottom: 1px solid #e7eaf0
+}
+
+    #prospectos .nav-tabs .nav-link {
+        margin-bottom: -1px;
+        background: none;
+        border: 1px solid transparent;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+        #prospectos .nav-tabs .nav-link:hover, #prospectos .nav-tabs .nav-link:focus {
+            border-color: transparent transparent transparent;
+            isolation: isolate
+        }
+
+        #prospectos .nav-tabs .nav-link.disabled {
+            color: #abb6c5;
+            background-color: transparent;
+            border-color: transparent
+        }
+
+        #prospectos .nav-tabs .nav-link.active, #prospectos .nav-tabs .nav-item.show .nav-link {
+            color: #5c60f5;
+            background-color: transparent;
+            border-color: transparent transparent #5c60f5
+        }
+
+    #prospectos .nav-tabs .dropdown-menu {
+        margin-top: -1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+

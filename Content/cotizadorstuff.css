@@ -1,0 +1,56 @@
+.form-control.cotizador {
+
+    text-align: center ;
+
+}
+
+
+.form-control.cotizador:focus {
+    display: block;
+    background-color: rgb(204,84,156,0.5) !important;
+    z-index: auto !important;
+    border-bottom: rgb(204,84,156,0.5) !important;
+    border-bottom-width: 4px !important;
+    border-bottom-style: solid !important;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    font-weight:700;
+}
+.form-control.resultado {
+    display: block;
+    padding: 22px !important;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    color: #525F7F !important;
+    background: rgb(125,69,238,0.2) !important;
+    border-radius: 4px !important;
+}
+.cotizadorcover{
+    width:100%;
+    text-align: center;
+    
+}
+
+
+.precios, h4, h4 small, hr{
+    font-weight: 600;
+}
+.prices-header {
+    padding-bottom: 9px;
+
+}
+
+
+#calculadora input {
+    border-radius:5px !important;
+    margin:0 0 5px !important;
+    width:100%;
+}
+
+#calculadora label {
+    font-weight:600;
+}
+
+

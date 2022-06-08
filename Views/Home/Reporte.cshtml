@@ -1,0 +1,1436 @@
+﻿
+@{
+    ViewBag.Title = "Reporte";
+    @Styles.Render("~/Content/ReporteStyle.css");
+    @Styles.Render("~/Content/sizing.css");
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+}
+
+<h2 class="text-white">Reporte</h2>
+
+<section style="width: 297mm; margin: 0 auto;" class="bg-white" id="reporte">
+    <!-- partial:index.partial.html -->
+
+    <div >
+
+        <div class="shapeContainer pt-4" style="height: 420mm; width: 297mm; padding:0 3em;">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="logo">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                         width="300.000000pt" height="150.000000pt" viewBox="0 0 300.000000 150.000000"
+                         preserveAspectRatio="xMidYMid meet">
+
+                        <g transform="translate(0.000000,150.000000) scale(0.100000,-0.100000)"
+                           fill="white" stroke="none" background="white">
+                            <path d="M1376 1390 c-245 -137 -556 -434 -758 -722 -35 -49 -68 -97 -74 -106
+         -10 -14 -16 -8 -39 39 -37 74 -133 212 -194 280 l-50 56 -45 -10 -44 -10 23
+         -37 c43 -68 102 -194 154 -330 90 -235 104 -263 141 -288 44 -30 93 -24 131
+         15 15 15 61 96 103 178 167 335 423 649 698 857 l85 63 -15 33 c-9 17 -18 32
+         -21 32 -3 0 -46 -23 -95 -50z" />
+                            <path d="M424 1136 c-192 -44 -352 -196 -408 -385 -21 -72 -21 -221 0 -292 71
+         -239 283 -399 527 -399 295 1 539 242 540 535 0 91 -10 149 -40 218 -19 44
+         -25 45 -51 12 -19 -24 -19 -25 -1 -77 26 -76 25 -210 -2 -290 -106 -316 -485
+         -427 -747 -219 -169 135 -221 393 -118 586 11 22 21 58 21 80 0 38 1 39 47 52
+         26 8 73 30 105 49 81 48 153 68 248 67 87 0 177 -25 245 -68 l39 -25 21 30 21
+         29 -40 26 c-102 68 -282 99 -407 71z" />
+                            <path d="M1570 820 l0 -220 55 0 55 0 0 88 c0 81 2 91 24 111 20 19 28 21 45
+         12 19 -11 21 -20 21 -111 l0 -100 60 0 60 0 0 115 c0 131 -14 179 -55 195 -37
+         14 -86 12 -115 -5 -14 -8 -28 -14 -32 -15 -5 0 -8 34 -8 75 l0 75 -55 0 -55 0
+         0 -220z" />
+                            <path d="M2650 820 l0 -220 59 0 60 0 3 48 c2 28 8 47 15 47 7 0 26 -21 42
+         -47 l31 -48 60 0 c46 0 59 3 54 13 -4 6 -29 44 -56 84 -26 40 -48 75 -48 78 0
+         4 20 32 45 64 25 31 45 60 45 64 0 4 -26 7 -57 7 -57 -1 -58 -1 -93 -48 l-35
+         -47 -5 110 -5 110 -57 3 -58 3 0 -221z" />
+                            <path d="M1296 1016 c-120 -45 -170 -185 -108 -307 47 -93 135 -135 229 -110
+         40 11 113 68 113 87 0 5 -20 21 -45 36 l-45 27 -25 -25 c-59 -59 -141 2 -132
+         99 8 87 78 126 132 73 l24 -24 45 30 c39 25 44 32 35 49 -31 59 -148 93 -223
+         65z" />
+                            <path d="M2005 897 c-45 -25 -85 -92 -85 -142 0 -50 40 -117 85 -142 44 -25
+         115 -30 162 -12 28 10 83 57 83 70 0 12 -95 39 -99 28 -7 -22 -53 -30 -77 -14
+         -44 28 -27 35 86 35 l110 0 0 44 c0 120 -152 197 -265 133z m109 -67 c44 -16
+         33 -40 -19 -40 -48 0 -62 19 -27 39 21 13 16 13 46 1z" />
+                            <path d="M2385 906 c-67 -29 -104 -105 -91 -184 17 -106 152 -165 256 -112 21
+         11 46 30 54 42 16 22 15 23 -36 41 -39 13 -58 15 -70 8 -26 -16 -53 -13 -71 7
+         -21 23 -22 76 -1 96 18 18 55 21 71 5 7 -7 27 -6 67 6 55 16 57 18 43 38 -35
+         56 -153 83 -222 53z" />
+                            <path d="M1912 533 c-45 -22 -89 -75 -102 -125 -37 -137 102 -272 235 -228 47
+         16 104 66 121 107 29 68 9 169 -42 214 -56 49 -149 63 -212 32z m145 -59 c8
+         -12 13 -51 13 -113 0 -113 -10 -131 -76 -131 -71 0 -91 42 -81 168 4 54 10 70
+         28 85 29 23 96 18 116 -9z" />
+                            <path d="M1994 365 c0 -49 1 -71 3 -48 2 23 2 64 0 90 -2 26 -3 8 -3 -42z" />
+                            <path d="M2325 536 c-40 -17 -90 -75 -105 -121 -45 -135 100 -280 235 -235 47
+         16 104 66 121 107 29 68 9 169 -42 214 -55 48 -145 63 -209 35z m134 -55 c16
+         -16 19 -35 20 -120 1 -119 -6 -131 -78 -131 -57 0 -71 12 -78 70 l-6 40 41 0
+         c38 0 41 -2 45 -32 l4 -33 1 33 c2 26 -3 35 -18 39 -13 3 -20 14 -20 29 0 17
+         6 24 20 24 15 0 20 6 19 28 -2 23 -2 24 -6 5 -4 -19 -11 -23 -44 -23 -35 0
+         -39 3 -39 25 0 58 95 90 139 46z" />
+                            <path d="M2735 536 c-62 -28 -115 -110 -115 -178 1 -76 64 -157 138 -178 51
+         -14 76 -13 120 5 114 48 156 182 89 283 -46 70 -155 102 -232 68z m145 -61 c0
+         -22 -4 -25 -40 -25 -27 0 -40 -4 -40 -13 0 -9 9 -12 28 -9 46 6 62 -18 62 -95
+         0 -83 -15 -103 -77 -103 -54 0 -83 26 -83 75 0 33 2 35 35 35 30 0 35 -3 35
+         -24 0 -14 5 -28 10 -31 6 -4 10 14 10 46 0 41 -3 50 -12 41 -7 -7 -27 -12 -45
+         -12 l-33 0 0 70 0 70 75 0 c73 0 75 -1 75 -25z" />
+                        </g>
+                    </svg>
+                </div>
+                <hr class="cover" />
+                <h1 class="white">Reporte de resultados</h1>
+                <h3 class="cover white">Preparado por:</h3>
+                <h3 class="subhead white">CastSoft</h3>
+                <h3 class="cover white" style="margin-bottom: 0em;">Abril 11, 2022</h3>
+            </div>
+            <div class="tags_clear"></div>
+            <div class="shapeUserImage">
+            </div>
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm; padding:0 3em;">
+        <br />
+        <h7 class="note text-right">Encabezado| 2</h7>
+        <hr class="double" />
+
+
+        <div class="row px-3">
+            <h2>Reporte de estado de cumplimiento de la NOM 035</h2>
+
+            <div class="col-12">
+                <p>
+                    Este informe resume la evaluación preparada por <strong>[insertar el nombre del autor/organización]</strong> para <strong>[insertar el nombre del cliente]</strong> y presenta los resultados del estado de cumplimiento de la NOM 035 en la organización.
+                </p>
+            </div>
+
+            <div class="col-8">
+                <p>
+
+                    La NOM-035 tiene como objetivo establecer los elementos para identificar, analizar y prevenir los factores de riesgo psicosocial, así como para promover un entorno organizacional favorable en los centros de trabajo.
+                </p>
+
+                <p>
+                    Este análisis previo a la aplicación de los cuestionarios tiene como objetivo el planteamiento de un primer enfoque para establecer un plan de acción en el cumplimiento de las prioridades; al mismo tiempo elevar la productividad, reducir la rotación, incrementar el compromiso de los trabajadores y ser una empresa relevante para la fuerza laboral del futuro.
+                </p>
+
+                <p>
+                    <strong>Para obtener más información sobre la NOM 035, visite la página <a href="check035.com">check035.com</a></strong>
+                </p>
+            </div>
+            <div class="col-4">
+                <blockquote>
+                    <p>
+                        El 85% de las organizaciones mexicanas no tienen las condiciones adecuadas para que sus colaboradores tengan un balance entre vida personal y trabajo, lo cual propicia trastornos físicos y psicológicos
+
+                    </p>
+                    <small>- <span title="Source Title">UNAM</span></small>
+                </blockquote>
+            </div>
+ 
+
+
+
+            <div class="graphTitleWrapper col-12">
+                <div class="circle">
+                    <h3>1</h3>
+                    <p>Parte</p>
+                </div>
+                <div class="graphTitle">
+                    <h6>Resultados generales NOM-035</h6>
+                    <hr />
+                    <p>Medidas de control por categorías</p>
+                </div>
+            </div>
+
+
+            <div class="col-8">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="col-4 p-4 text-justify magentaBG">
+
+                <p class="background">
+                    Basado en las respuestas, te presentamos los resultados en tu organización:
+                </p>
+                <p class="background">
+                    Área con mayores fortalezas: <span>Liderazgo y relaciones de trabajo</span> con un <span>100%</span> de estado de cumplimiento.
+                </p>
+                <p class="background">
+                    Áreas de oportunidad: <span>Entorno organizacional</span> con un <span>37.5%</span> de estado de cumplimiento.
+                </p>
+
+
+            </div>
+        </div>
+
+        <div class="col-12 foot">
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm; padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note">Encabezado| 3</h7>
+        <hr class="double" />
+
+        <div class="graphTitleWrapper col-12">
+            <div class="circle">
+                <h3>2</h3>
+                <p>Parte</p>
+            </div>
+            <div class="graphTitle">
+                <h6>Resultados generales NOM-035</h6>
+                <hr />
+                <p>Medidas de control por categorías</p>
+            </div>
+        </div>
+
+        <canvas id="myChart2"></canvas>
+
+        <h4>Medidas recomendadas</h4>
+
+        <div class="packageItem">
+            <h4 class="magenta">Acerca de:</h4>
+            <ul>
+                <li><h6>Título</h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem libero eius eum obcaecati inventore odio natus, nesciunt hic. Nobis distinctio illo eligendi impedit ducimus aliquid similique, eaque magni tempore quas..</li>
+
+                <li><h6>Título</h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, laudantium ipsam? Perferendis magnam molestias quo culpa necessitatibus rerum. Recusandae illum eum optio quaerat accusamus dolores quo, nisi error non? Dolor..</li>
+
+                <li><h6>Título</h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, odit! Explicabo consequatur possimus architecto obcaecati at ipsa labore doloribus, corporis ratione iusto vero harum ducimus fuga, eveniet exercitationem aut enim!.</li>
+            </ul>
+        </div>
+        <div class="col-12 foot">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note">Encabezado| 4</h7>
+        <hr class="double" />
+
+
+        <div class="graphTitleWrapper">
+            <div class="circle">
+                <h3>3</h3>
+                <p>Parte</p>
+            </div>
+            <div class="graphTitle">
+                <h6>Resultados por preguntas contestadas</h6>
+                <hr />
+                <p>Desglose de resultados</p>
+                <br />
+                <br />
+            </div>
+        </div>
+
+
+        <div class="tableGraph">
+            <table class="businesCase tableResume  flex" style="width: 95%; margin: 0em auto;">
+                <thead>
+                    <tr>
+                        <th class="tableTitle col-5" colspan="4">Desglose de componentes indiviuales de evaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td class="rowTitle">Ambiente de trabajo</td>
+                        <td class="numbers"><span>6</span> de 10</td>
+                        <td class="numbers ">
+                            <div class="containerDonut">
+                                <canvas id="myChart3a"></canvas>
+                            </div>
+                        </td>
+                        <td class="numbers">
+                            <ul>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="rowTitle">Factores propios de la actividad</td>
+                        <td class="numbers"><span>8</span> de 10</td>
+                        <td class="numbers">
+                            <div class="containerDonut">
+                                <canvas id="myChart3b"></canvas>
+                            </div>
+                        </td>
+                        <td class="numbers">
+                            <ul>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="rowTitle">Organización del tiempo de trabajo</td>
+                        <td class="numbers "><span>3</span> de 4</td>
+                        <td class="numbers">
+                            <div class="containerDonut">
+                                <canvas id="myChart3c"></canvas>
+                            </div>
+                        </td>
+                        <td class="numbers ">
+                            <ul>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rowTitle">Liderazgo y relaciones de trabajo</td>
+                        <td class="numbers "><span>5</span> de 5</td>
+                        <td class="numbers ">
+                            <div class="containerDonut">
+                                <canvas id="myChart3d"></canvas>
+                            </div>
+                        </td>
+                        <td class="numbers">
+                            <ul>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rowTitle">Entorno organizacional</td>
+                        <td class="numbers"><span>3</span> de 8</td>
+                        <td class="numbers">
+                            <div class="containerDonut">
+                                <canvas id="myChart3e"></canvas>
+                            </div>
+                        </td>
+                        <td class="numbers">
+                            <ul>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                                <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="rowTitle"></td>
+                        <td class="total text-center"><span>28</span>/37</td>
+                        <td class="numbers" colspan="2"></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Ambiente de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle">1. ¿Ya ha capacitado  y sensibilizado de los directivos, gerentes y supervisores para la prevención de los factores de riesgo psicosocial?</td>
+                    <td class="numbers  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle ">2. ¿Ya ha capacitación y sensibilización en la promoción de entornos organizacionales favorables?</td>
+                    <td class="numbers  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+            </tbody>
+        </table>
+
+
+        <div class="col-sm-12 foot">
+            <br />
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <h7 class="note">Encabezado| 5</h7>
+        <hr class="double" />
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Ambiente de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="rowTitle ">3. ¿Crea reuniones para abordar las áreas de oportunidad de mejora, a efecto de atender los problemas en el lugar de su trabajo y determinar sus soluciones?</td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle ">4. ¿Realiza reuniones periódicas (semestrales o anuales) de seguimiento a las actividades establecidas para el apoyo social y, en su caso, extraordinarias si ocurren eventos?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Ambiente de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="rowTitle ">5. ¿Tiene  actividades culturales y del deporte entre sus trabajadores y proporcionarles los equipos y útiles indispensables?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">6. ¿Promociona de actividades de integración familiar en el trabajo, previo acuerdo con los trabajadores?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">7. ¿Tiene mecanismos para reconocer el desempeño sobresaliente (superior al esperado) de los trabajadores?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">8. ¿Tiene mecanismos para difundir los logros de los trabajadores sobresalientes?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">9. ¿Tiene mecanismos para expresar al trabajador sus posibilidades de desarrollo?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">10. ¿Tiene mecanismos para la participación proactiva y comunicación entre los colaboradores ?</td>
+                    <td class="numbers col-1 iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+        <div class="col-sm-12 foot">
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <h7 class="note">Encabezado| 6</h7>
+        <hr class="double" />
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Factores propios de la actividad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle ">11. ¿Cuenta con mecanismos que permiten identificar la distribución adecuada de los tiempos de trabajo?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle">12. ¿Cuenta con mecanismos establecer y difundir instrucciones claras a los trabajadores para la atención de los problemas que impiden o limitan el desarrollo de su trabajo, cuando éstos se presenten?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">13. ¿Cuenta con mecanismos para la  revisión y supervisión que la distribución de la carga de trabajo se realice de forma equitativa y considerando el número de trabajadores, actividades a desarrollar, alcance de la actividad y su capacitación?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">14. ¿Cuenta con mecanismos o programas que faciliten la participación  en la mejora de las condiciones de trabajo y la productividad siempre que el proceso productivo lo permita y cuenten con la experiencia y capacitación para ello?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">15. ¿Cuenta con mecanismos o sistemas de trabajo que permitan  acordar ymejorar el margen de libertad y control sobre su trabajo por parte de los trabajadores y el patrón?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">16. ¿Cuenta con mecanismos o programas de desarrollo para impulsar que éstos desarrollen nuevas competencias o habilidades, considerando las limitaciones del proceso productivo?</td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">17. ¿Tiene mecanismos para definir los lineamientos para establecer medidas y límites que eviten las jornadas de trabajo superiores a las previstas en la Ley Federal del Trabajo?</td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+            </tbody>
+        </table>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Factores propios de la actividad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle ">18. ¿Cuenta con una capacitación continua  para la adecuada realización de las tareas encomendadas?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle">19. ¿Cuenta con mecanismos para  definición precisa de responsabilidades para los miembros de la organización?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+        <div class="col-sm-12 foot">
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note">Encabezado| 7</h7>
+        <hr class="double" />
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Factores propios de la actividad</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td class="rowTitle">20. ¿La distribución es adecuada de cargas de trabajo, con jornadas laborales regulares conforme a la Ley Federal del Trabajo?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Organización del tiempo de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle ">21. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle">22. ¿Cuenta con mecanismos para planificar el trabajo, considerando el proceso productivo, de manera que se tengan las pausas o periodos necesarios de descanso, rotación de tareas y otras medidas necesarias para evitar ritmos de trabajo acelerados?</td>
+                    <td class="numbers  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">23. ¿Cuenta con Instructivos o procedimientos que definan claramente las tareas y responsabilidades?</td>
+                    <td class="numbers col-1 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle ">24. ¿Cuenta con mecanismos  para involucrar a los trabajadores en la definición de los horarios de trabajo cuando las condiciones del trabajo lo permitan?</td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Liderazgo y relaciones de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle ">25. ¿Cuenta con mecanismos o esquemas  para el manejo de conflictos en el trabajo?</td>
+                    <td class="numbers  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle ">26. ¿Cuenta con mecanismos para fomentar la comunicación entre supervisores o gerentes y trabajadores, así como entre los trabajadores?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers  iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">27. ¿Cuenta con mecanismos o programas  para involucrar a los trabajadores en la toma de decisiones sobre la organización de su trabajo?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+        <div class="col-sm-12 foot">
+            <br />
+
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note">Encabezado| 7</h7>
+        <hr class="double" />
+
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Liderazgo y relaciones de trabajo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+                <tr>
+                    <td class="rowTitle">28. ¿Cuenta con programas o mecanismos para  establecer relaciones entre trabajadores, supervisores, gerentes y patrones para que puedan obtener apoyo los unos de los otros?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">29. ¿Cuenta con mecanismos para establecer procedimientos de actuación y seguimiento para tratar problemas relacionados con la violencia laboral, y capacitar al responsable de su implementación?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Entorno organizacional </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle ">30. ¿Cuenta con mecanismos o programas  para definir lineamientos para prohibir la discriminación y fomentar la equidad y el respeto?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")"><p>Evidencia 1</p></a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rowTitle">31. ¿Ya ha proporcionado la capacitación y sensibilización en la promoción de entornos organizacionales favorables?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">32. ¿Cuenta con mecanismos o programas para promover la ayuda mutua y el intercambio de conocimientos y experiencias entre los trabajadores?</td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle">33. ¿Cuenta con mecansimos o programas  de apoyos a los trabajadores, de manera que puedan atender emergencias familiares, mismas que el trabajador tendrá que comprobar?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            r
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle">34. ¿Cuenta con mecanismos, capacitación o programas para  difundir información para sensibilizar sobre la violencia laboral, tanto a trabajadores como a directivos, gerentes y supervisores?</td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle">35. ¿Cuenta con mecanismos para  Informar sobre la forma en que se deben denunciar actos de violencia laboral?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers ">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+        <div class="col-sm-12 foot">
+
+            <br />
+            <br />
+            <br />
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+
+    <div class="container border-bottom" style="height: 420mm;  padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note">Encabezado| 7</h7>
+        <hr class="double" />
+
+
+
+        <table class="businesCase tableQuestion" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle" colspan="4">Entorno organizacional </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td class="rowTitle">36. ¿Cuenta con mecanismos  seguros y confidenciales para la recepción de quejas por prácticas opuestas al entorno organizacional favorable y para denunciar actos de violencia laboral?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="rowTitle ">37. ¿Cuenta con programas que promuevan el sentido de pertenencia de los trabajadores a la organización?</td>
+                    <td class="numbers iconInactive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+
+                    </td>
+                    <td class="numbers">
+                        <ul>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 1</a></li>
+                            <li><a href="@Url.Action("Añadir_evidencia","Home")">Evidencia 2</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <div class="col-sm-12 foot">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+</section>
+
+
+@Scripts.Render("~/Scripts/reporteScript.js")

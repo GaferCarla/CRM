@@ -1,0 +1,156 @@
+﻿.wrapper {
+    padding: 30px 50px !important;
+    margin: 10px auto;
+    max-width: 900px
+}
+
+
+.img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover
+}
+
+#img-section p,
+#deactivate p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: justify
+}
+
+#img-section b,
+#img-section button,
+#deactivate b {
+    font-size: 14px
+}
+
+label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    padding-left: 3px
+}
+
+.form-control {
+    border-radius: 10px
+}
+
+input[placeholder] {
+    font-weight: 500
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1.5px solid #0779e4
+}
+
+
+    select:focus {
+        outline: none
+    }
+
+.button {
+    background-color: #fff;
+    color: #0779e4
+}
+
+    .button:hover {
+        background-color: #0779e4;
+        color: #fff
+    }
+
+.btn-primary {
+    background-color: #0779e4
+}
+
+.danger {
+    background-color: #fff;
+    color: #e20404;
+    border: 1px solid #ddd
+}
+
+    .danger:hover {
+        background-color: #e20404;
+        color: #fff
+    }
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+
+.profile-pic {
+    height: 120px;
+    width: 120px;
+    z-index: 1001;
+    padding: 10px;
+}
+
+    .profile-pic img {
+        box-shadow: 0px 0px 5px 0px #c1c1c1;
+        cursor: pointer;
+        width: auto;
+        height: 100px;
+        max-width: 170px;
+    }
+
+
+.py-2 input, .py-2 textarea {
+    padding: 10px 12px 10px 12px !important;
+    border: 1px solid lightgrey !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100% !important;
+    border: 1px solid lightgrey !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+.py-2 input:focus, .py-2 textarea:focus, .bootstrap-select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 2px solid #512DA8 !important;
+    outline-width: 0
+}
+
+.py-2 textarea {
+    min-height:120px !important;
+}
+
+
+
+
+
+
+@media(max-width:576px) {
+    .wrapper {
+        padding: 25px 20px
+    }
+
+    #deactivate {
+        line-height: 18px
+    }
+
+    #img-section, #img-section p {
+        text-align: center;
+    }
+
+    .profile-pic {
+        text-align: center !important;
+    }
+}

@@ -1,0 +1,412 @@
+﻿
+@{
+    ViewBag.Title = "Cotizador";
+    @Styles.Render("~/Content/cotizadorstuff.css");
+
+    @Styles.Render("~/Content/cotizacionesStyle.css");
+    @Styles.Render("~/Content/webPixel.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+}
+
+<style>
+    .table th, .table td {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .table th {
+        width:auto !important;
+        font-weight:800 !important;
+    }
+
+    .table td {
+        font-weight: 700 !important;
+        color: #6c757d !important;
+    }
+
+
+    .table-responsive {
+        overflow:hidden
+    }
+
+    .btn-success {
+        background-color: #7c1cd4;
+        border: #7c1cd4;
+    }
+
+        .btn-success:hover {
+            background-color: #5e279a;
+            border: #5e279a;
+        }
+
+    @@media (max-width:767px) {
+    .table-responsive {
+        overflow-x: auto !important;
+    }
+}
+</style>
+
+
+<div class="container py-4 bg-white" id="cotizaciones">
+
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Home</a></li>
+                <li class="breadcrumb-item"><a href='@Url.Action("Cotizaciones","Home")' data-abc="true" class="font-weight-bold text-uppercase">Cotizaciones</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspCalcula tu cotización</span></li>
+            </ol>
+        </nav>
+
+    </div>
+
+    <div class=" flex-grow-1 overflow-visible">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight mb-4" id="titleCRM">Calculadora</h1>
+                        </div> <!-- Actions -->
+                    </div> 
+                </div>
+            </div>
+        </header> <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+
+
+
+
+                <div class="card shadow border-0 mb-7 pb-10 pl-2 pr-2">
+                    <div class="card-header row">
+                        <div class="col-12 col-sm-6">
+                            <h4>Rango de precios</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- CRUD -->
+                    <div class="table-responsive ">
+                        <div class="row">
+                            <table class="table table-hover table-nowrap display">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="text-center">Rango de <br />empleados</th>
+                                        <th class="text-center">Máximo <br />en precio<br />individual</th>
+                                        <th class="text-center">Mínimo<br />en precio<br /> individual</th>
+                                        <th class="text-center">Máximo<br />en costo<br />anual</th>
+                                        <th class="text-center">Mínimo<br />en costo<br /> anual</th>
+                                        <th class="text-center">Porcentajes<br />para<br /> anticipos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1 a 15</td>
+                                        <td class="text-center">164.66</td>
+                                        <td class="text-center">126.66</td>
+                                        <td class="text-center">1975.92</td>
+                                        <td class="text-center">1519.92</td>
+                                        <td class="text-center">6 y 30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1 a 30</td>
+                                        <td class="text-center">126.66</td>
+                                        <td class="text-center">94</td>
+                                        <td class="text-center">1519.92</td>
+                                        <td class="text-center">1128</td>
+                                        <td class="text-center">6 y 30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1 a 100</td>
+                                        <td class="text-center">94</td>
+                                        <td class="text-center">73</td>
+                                        <td class="text-center">1128</td>
+                                        <td class="text-center">876</td>
+                                        <td class="text-center">6 y 30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1 a 500</td>
+                                        <td class="text-center">94</td>
+                                        <td class="text-center">57.83</td>
+                                        <td class="text-center">1128</td>
+                                        <td class="text-center">693.96</td>
+                                        <td class="text-center">10 y 20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1 a 1000</td>
+                                        <td class="text-center">57.83</td>
+                                        <td class="text-center">46</td>
+                                        <td class="text-center">693.96</td>
+                                        <td class="text-center">552</td>
+                                        <td class="text-center">10 y 20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">+1000</td>
+                                        <td class="text-center">46</td>
+                                        <td class="text-center">30</td>
+                                        <td class="text-center">552</td>
+                                        <td class="text-center">360</td>
+                                        <td class="text-center">12<br /> mensualidades</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow border-0 mb-1 px-lg-5 px-sm-4 px-3 pb-5">
+                    <div class="card-header row">
+                        <div class="col-12 col-sm-6">
+                            <h4>Calculadora</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- CRUD -->
+                    <div class="table-responsive">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                <div class="row p-3">
+                                    <p>Introduzca el número de empleados para obtener precios</p>
+                                </div>
+                                <div class="row" id="calculadora" style="background-color: #ebe5f9; margin: 0px; padding: 0px;">
+                                    <div class="col-lg-4 col-md-12 col-sm-12 " style="background-color:#7d45ee; margin:0px; padding:0px;">
+                                        <img class="img-responsive cotizadorcover mt-lg-18" src="https://vivegrow.com/00_JP_Mailing/Misc/Calculadora.png">
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-sm-12 pt-3 pt-lg-4 px-3 px-lg-2" style="background-color:#ebe5f9">
+                                        <div class="row px-lg-3">
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label >Número de empleados</label>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="number" min="1" step="1" id="Numero_de_empleados" name="name" onchange="verificar_cambio()" class="form-control cotizador">
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label >Precio individual</label>
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="Precio_individual" onchange="correcion()" onclick="limpiar_campos()" class="form-control resultado">
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label>Precio Anual</label>
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="Precio_anual" onchange="correcion()" onclick="limpiar_campos()" class="form-control resultado">
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label>Precio final</label>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="Total" class="form-control resultado">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-sm-12 pt-3 pt-lg-4 px-3 px-lg-2" >
+                                        <div class="row px-lg-3" >
+                                            <div class="col-12 pb-3 text-sm-center text-lg-left">
+                                                <h3>Precios y mensualidades</h3>
+                                                <hr style="width: 90%; color: #5e279a; height:3px; margin:5px auto 0" />
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label>Anticipo 30%</label>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="Anticipo30" class="form-control resultado">
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label>10 mensualidades</label>
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="10mensuales" class="form-control resultado">
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 text-sm-center text-lg-left">
+                                                <label>6 mensualidades</label>
+
+                                            </div>
+                                            <div class="col-lg-12 col-sm-6 col-12 pb-2">
+                                                <input type="text" id="6meses" class="form-control resultado">
+
+                                            </div>
+                                            <div class="col-12 py-3 py-lg-4">
+                                                <div class="regresar">
+                                                    <a class="btn btn-success" style="width:100%" href='@Url.Action("Index","Home")'>Descargar</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    function myFunction() {
+        window.location.href = "/ONA/tesreporte/";
+    }
+    function limpiar_campos() {
+        if (document.getElementById('6meses').value != "" && contador_de_registro == 0) {
+            document.getElementById('Precio_individual').value = "";
+            document.getElementById('Precio_anual').value = "";
+            contador_de_registro = 1;
+
+        }
+    }
+    var anteriormaximo;
+    var anterior_minimo;
+    var contador_de_registro = 1;
+    function verificar_cambio() {
+        console.log("ENTRO")
+        if ((anteriormaximo == null && anterior_minimo == null) || (document.getElementById('Numero_de_empleados').value <= anteriormaximo && document.getElementById('Numero_de_empleados').value >= anterior_minimo)) {
+            correcion();
+        } else {
+            document.getElementById('Precio_individual').value = "";
+            document.getElementById('Precio_anual').value = "";
+            document.getElementById('Total').value = "";
+            document.getElementById('Anticipo30').value = "";
+            document.getElementById('10mensuales').value = "";
+            document.getElementById('6meses').value = "";
+        }
+    }
+    function correcion() {
+        let mapa = new Map();
+        var contador = 0;
+        mapa.set("Rango1_5", {
+            minimo: 1,
+            Cantidad: 15,
+            Maximo_individual: [164.66],
+            Minimo_individual: [126.66],
+            Maximo_anual: [1975.92],
+            Minimo_anaul: [1519.92],
+
+
+        }
+        );
+        mapa.set("Rango1_30", {
+            minimo: 16,
+            Cantidad: 30,
+            Maximo_individual: [126.66],
+            Minimo_individual: [94],
+            Maximo_anual: [1519.92],
+            Minimo_anaul: [1128],
+
+
+        });
+        mapa.set("Rango1_100", {
+            minimo: 31,
+            Cantidad: 100,
+            Maximo_individual: [94],
+            Minimo_individual: [73],
+            Maximo_anual: [1128],
+            Minimo_anaul: [876],
+
+
+        });
+        mapa.set("Rango1_500", {
+            minimo: 101,
+            Cantidad: 500,
+            Maximo_individual: [94],
+            Minimo_individual: [57.83],
+            Maximo_anual: [1128],
+            Minimo_anaul: [693.96],
+
+
+        });
+        mapa.set("Rango1_1000", {
+            minimo: 501,
+            Cantidad: 1000,
+            Maximo_individual: [57.83],
+            Minimo_individual: [46],
+            Maximo_anual: [693.96],
+            Minimo_anaul: [552],
+
+
+        });
+        mapa.set("Rango1_1000mas", {
+            minimo: 1001,
+            Cantidad: 1001,
+            Maximo_individual: [46],
+            Minimo_individual: [30],
+            Maximo_anual: [552],
+            Minimo_anaul: [360],
+
+
+        });
+        if (document.getElementById('Numero_de_empleados').value != "" && document.getElementById('Precio_individual').value != "" && document.getElementById('Precio_anual').value != "") {
+            mapa.forEach((valor, clave) => {
+                if (document.getElementById('Numero_de_empleados').value <= valor.Cantidad && (document.getElementById('Precio_individual').value == valor.Maximo_individual || document.getElementById('Precio_individual').value == valor.Minimo_individual) && (document.getElementById('Precio_anual').value == valor.Maximo_anual || document.getElementById('Precio_anual').value == valor.Minimo_anaul)) {
+                    anteriormaximo = valor.Cantidad;
+                    anterior_minimo = valor.minimo;
+                    contador_de_registro = 0;
+                    var numero_emplados = document.getElementById('Numero_de_empleados').value;
+                    document.getElementById('Total').value = numero_emplados * document.getElementById('Precio_anual').value;
+                    document.getElementById('Anticipo30').value = document.getElementById('Total').value * 0.3;
+                    document.getElementById('10mensuales').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 10;
+                    document.getElementById('6meses').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 6;
+                    contador = contador + 1;
+                } else if (document.getElementById('Numero_de_empleados').value > 1000 && (document.getElementById('Precio_individual').value == valor.Maximo_individual || document.getElementById('Precio_individual').value == valor.Minimo_individual) && (document.getElementById('Precio_anual').value == valor.Maximo_anual || document.getElementById('Precio_anual').value == valor.Minimo_anaul)) {
+                    anteriormaximo = valor.Cantidad;
+                    anterior_minimo = valor.minimo;
+                    contador_de_registro = 0;
+                    var numero_emplados = document.getElementById('Numero_de_empleados').value;
+                    document.getElementById('Total').value = numero_emplados * document.getElementById('Precio_anual').value;
+                    document.getElementById('Anticipo30').value = document.getElementById('Total').value * 0.3;
+                    document.getElementById('10mensuales').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 10;
+                    document.getElementById('6meses').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 6;
+                    contador = contador + 1;
+                }
+            });
+            if (contador == 0) {
+                alert("Coloca la informacion correcta");
+            }
+        }
+    }
+    function costos() {
+        var numero_emplados = document.getElementById('Numero_de_empleados').value;
+        var costante = 0;
+        if (numero_emplados <= 15) {
+            costante = 164.66;
+        } else if (numero_emplados <= 30) {
+            costante = 126.66;
+        } else if (numero_emplados <= 100) {
+            costante = 94;
+        } else if (numero_emplados <= 500) {
+            costante = 94;
+        } else if (numero_emplados <= 1000) {
+            costante = 57.83;
+        } else if (numero_emplados > 1000) {
+            costante = 46;
+        }
+        document.getElementById('Precio_individual').value = costante;
+        document.getElementById('Precio_anual').value = costante * 12;
+        document.getElementById('Total').value = numero_emplados * document.getElementById('Precio_anual').value;
+        document.getElementById('Anticipo30').value = document.getElementById('Total').value * 0.3;
+        document.getElementById('10mensuales').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 10;
+        document.getElementById('6meses').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 6;
+
+    }
+</script>

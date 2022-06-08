@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Añadir_evidencia";
+    @Styles.Render("~/Content/ReporteStyle.css");
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+
+}
+
+
+
+<div class="card shadow border-0 bg-white p-4">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Home</a></li>
+                <li class="breadcrumb-item"><a href='@Url.Action("listado_evidencia","Home")' data-abc="true" class="font-weight-bold text-uppercase">Listado de evidencia</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspAñadir evidencia</span></li>
+            </ol>
+        </nav>
+
+    </div>
+
+    @Html.Partial("_MultipleAddFile")
+
+
+
+
+
+</div>

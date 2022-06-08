@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>CRM</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+
+
+
+
+    @Styles.Render("~/Content/layoutStyle.css")
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+        <a href="#" class="navbar-brand font-weight-bold d-block d-lg-none"><img class="logoBanner" src="~/Images/logo-web.png" /></a> <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"> <span class="navbar-toggler-icon"></span> </button>
+        <div id="navbarContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown megamenu">
+                    <a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle font-weight-bold text-uppercase">
+                        <img class="logoBanner" id="logoBannerDropdown" src="~/Images/logo-web.png" />
+                    </a>
+                    <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
+                        <div class="container">
+                            <div class="row bg-white rounded-0 m-0 shadow-sm">
+                                <div class="col-lg-7 col-xl-8">
+                                    <div class="p-4">
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">Heading one</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="@Url.Action("Index","Home")" class="nav-link text-small pb-0">Home</a></li>
+                                                    <li class="nav-item"><a href="@Url.Action("Landing","Home")"  class="nav-link text-small pb-0 ">Landing</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">Heading two</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="@Url.Action("Reporte","Home")"  class="nav-link text-small pb-0 ">Reporte</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">Heading three</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="@Url.Action("RecursoComercializacion","Home")"  class="nav-link text-small pb-0 ">Recursos de Comercialización</a></li>
+                                                    <li class="nav-item"><a href="@Url.Action("Añadir_evidencia","Home")" class="nav-link text-small pb-0 ">Añadir evidencia</a></li>
+                                                    <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Link 6</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">Heading four</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Link 7</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-xl-4 px-0 d-none d-lg-block" style="background: center center url(https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)no-repeat; background-size: cover;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="@Url.Action("Clientes","Home")" class="nav-link font-weight-bold text-uppercase">&nbspClientes</a></li>
+                <li class="nav-item"><a href="@Url.Action("Indicadores","Home")" class="nav-link font-weight-bold text-uppercase">&nbspIndicadores</a></li>
+                <li class="nav-item"><a href="@Url.Action("Seguimiento","Home")" class="nav-link font-weight-bold text-uppercase">&nbspSeguimiento</a></li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item my-2 my-lg-0 hide"><p class="font-weight-bold text-uppercase" style="color: rgba(0,0,0,.5); padding:0.5rem 0 "><small>Hola</small></p></li>
+
+                <li class="nav-item my-2 my-lg-0 hide"><a href="" class="nav-link font-weight-bold text-uppercase"><small>Usuario</small></a></li>
+                <li class="nav-item my-2 my-lg-0">
+                    <a href="" class="nav-link font-weight-bold text-uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                        <small>Cerrar sesión</small>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+    <div class="py-5 " style="width:90%; margin:0 auto">
+
+        @RenderBody()
+
+
+
+
+
+
+    </div>
+
+    <div class="px-5 py-4 my-auto bg-white ">
+
+        <div class="row ">
+            <div class="copy text-muted ml-auto font-weight-bold text-uppercase col-6">Castsoft &copy 2022</div>
+            <div class="col-6" style="text-align:right">
+                <div class="fa fa-facebook px-3"></div>
+                <div class="fa fa-twitter px-3"></div>
+                <div class="fa fa-instagram pl-3"> </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+</body>
+</html>
+

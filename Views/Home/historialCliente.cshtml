@@ -1,0 +1,354 @@
+﻿
+@{
+    ViewBag.Title = "historialCliente";
+    @Styles.Render("~/Content/clientesStyle.css");
+    @Styles.Render("~/Content/webPixel.css");
+    @Styles.Render("~/Content/dataTables.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+}
+
+<div class="container py-4 bg-white" id="historialClientes">
+
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Home</a></li>
+                <li class="breadcrumb-item"><a href='@Url.Action("Clientes","Home")' data-abc="true" class="font-weight-bold text-uppercase">Clientes</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspHistorial</span></li>
+            </ol>
+        </nav>
+
+    </div>
+
+    <div class=" flex-grow-1 overflow-visible">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-4 ls-tight" id="titleCRM">Historial</h1>
+                        </div> <!-- Actions -->
+                        <div class="col-sm-6 col-12 text-sm-end mb-4">
+                            <div class="mx-n1">
+                                <a href='@Url.Action("editarDatosClientes","Home")' class="btn d-inline-flex btn-sm btn-primary mx-1" style="color:white" id="buttonNew">
+
+                                    <div class="rowB">
+                                        <svg class="pe-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                        </svg>
+
+                                        Editar datos
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div> <!-- Nav -->
+
+                </div>
+            </div>
+        </header> <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+                @Html.Partial("_tarjetaCliente")
+                <div class="card shadow border-0 mb-7 pl-2 pr-2">
+                    <div class="card-header row">
+                        <div class="col-12 col-sm-6">
+                            <h4>Registros</h4>
+                        </div>
+                        <!-- Filter/Search-->
+                        <div class="col-12 col-sm-6">
+                            <input type="text" id="myInputSearch" onkeyup="myFilterFunction()" placeholder="Busca por Folio..." title="Type in a name">
+
+                        </div>
+                        <!-- Show/Hide columns buttons -->
+                        <div class="col-12 p-2">
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="folioField" checked><span>Folio</span></label>
+                            </div>
+
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="sellerField"><span>Asesor</span></label>
+                            </div>
+
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="quoteField"><span>Precio</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="statusQuoteField"><span>Fecha de captura</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="statusPaymentField"><span>Status de pago</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="datePaymentField"><span>Fecha de pago</span></label>
+                            </div>
+
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="idPaymentField"><span>ID de pago</span></label>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <!-- CRUD -->
+                    <div class="table-responsive">
+                        <table class="table table-hover table-nowrap display" id="prospectsRegister" data-toggle="table" data-search="true" data-filter-control="true">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th onclick="sortTable(0)" class="folioField">
+                                        Folio
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(1)" class="sellerField">
+                                        Asesor
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(2)" class="serviceField">
+                                        Servicio
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(3)" class="quoteField">
+                                        Precio
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(4)" class="dateQuoteField">
+                                        Fecha de captura
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(5)" class="statusQuoteField">
+                                        Cotización
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+
+                                    <th onclick="sortTable(6)" class="statusPaymentField">
+                                        Status de pago
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(7)" class="datePaymentField">
+                                        Fecha de pago
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(8)" class="idPaymentField">
+                                        ID de pago
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="folioField text-center">000001</td>
+                                    <td class="sellerField text-center">Jorge</td>
+                                    <td class="serviceField text-center">Servicio 1</td>
+                                    <td class="quoteField text-center">$30000</td>
+                                    <td class="dateQuoteField text-center"> 2021-11-30 </td>
+
+                                    <td class="statusQuoteField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Enviado</span> </td>
+                                    <td class="statusPaymentField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Pagado</span> </td>
+                                    <td class="datePaymentField text-center"> 2021-12-02 </td>
+                                    <td class="idPaymentField text-center"> 11189564 </td>
+
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verRegistro","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="folioField text-center">000002</td>
+                                    <td class="sellerField text-center">María</td>
+                                    <td class="serviceField text-center">Servicio 2</td>
+                                    <td class="quoteField text-center">$10000</td>
+                                    <td class="dateQuoteField text-center"> 2021-11-20 </td>
+
+                                    <td class="statusQuoteField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Enviado</span> </td>
+                                    <td class="statusPaymentField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Pendiente</span> </td>
+                                    <td class="datePaymentField text-center"></td>
+                                    <td class="idPaymentField text-center"></td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verRegistro","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="folioField text-center">000003</td>
+                                    <td class="sellerField text-center">Lucía</td>
+                                    <td class="serviceField text-center">Servicio 3</td>
+                                    <td class="quoteField text-center">$70000</td>
+                                    <td class="dateQuoteField text-center"></td>
+
+                                    <td class="statusQuoteField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Pendiente</span> </td>
+                                    <td class="statusPaymentField text-center"> <span class="badge badge-lg badge-dot"> </span> </td>
+                                    <td class="datePaymentField text-center"></td>
+                                    <td class="idPaymentField text-center"></td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verRegistro","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="folioField text-center">000004</td>
+                                    <td class="sellerField text-center">Jorge</td>
+                                    <td class="serviceField text-center">Servicio 1</td>
+                                    <td class="quoteField text-center">$30000</td>
+                                    <td class="dateQuoteField text-center"> 2021-12-10 </td>
+
+                                    <td class="statusQuoteField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Enviado</span> </td>
+                                    <td class="statusPaymentField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Rechazado</span> </td>
+                                    <td class="datePaymentField text-center"></td>
+                                    <td class="idPaymentField text-center"></td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verRegistro","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="folioField text-center">000005</td>
+                                    <td class="sellerField text-center">Jorge</td>
+                                    <td class="serviceField text-center">Servicio 4</td>
+                                    <td class="quoteField text-center">$20000</td>
+                                    <td class="statusQuoteField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Enviado</span> </td>
+                                    <td class="dateQuoteField text-center"> 2019-11-30 </td>
+                                    <td class="statusPaymentField text-center"> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Pagado</span> </td>
+                                    <td class="datePaymentField text-center"> 2019-12-02 </td>
+                                    <td class="idPaymentField text-center"> 11189564 </td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("verRegistro","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="card-footer border-0 py-5"> <span class="text-muted text-sm">Mostrando 10 registros de <br />250 resultados encontrados</span> </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<div id="deleteEmployeeModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar datos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que quieres eliminar los datos de esta persona?</p>
+                    <p class="text-warning"><small>Esta acción no podrá ser deshecha.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/sortTableHeaderScript.js")
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/boosted/4.1.1/js/boosted.bundle.min.js'></script>
+
+
+
+<script>
+    function myFilterFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInputSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("prospectsRegister");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    $("input:checkbox:not(:checked)").each(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).hide();
+    });
+
+    $("input:checkbox").click(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).toggle();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

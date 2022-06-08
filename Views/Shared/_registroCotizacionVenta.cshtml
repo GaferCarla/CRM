@@ -1,0 +1,59 @@
+﻿<style>
+    #cotizacionVenta h4 {
+        color: #794475 !important;
+    }
+</style>
+
+
+<div class="py-2 row" id="cotizacionVenta">
+    <h4 class="pt-md-0 pt-3 pb-3">Cotización & Venta</h4>
+    <div class="col-md-6 pt-md-0 pt-3">
+        <label for="servicesField">Servicios</label>
+        <div class="arrow">
+            <select name="servicesField" class="bg-light selectpicker">
+                <option value="" selected disabled>--Seleccionar--</option>
+                <option>Servicio 1</option>
+                <option>Servicio 2</option>
+                <option>Servicio 3</option>
+                <option>Servicio 4</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6 pt-md-0 pt-3">
+        <label for="priceField">Precio</label>
+        <input type="number" min="1.00" max="10000.00" step="0.01" class="bg-light form-control" placeholder="00.00">
+    </div>
+    <div class="col-md-6 pt-md-0 pt-3 mt-md-4">
+        <label for="statusQuoteField">Status de cotización</label>
+        <div class="arrow">
+            <select name="statusQuoteField" class="bg-light selectpicker">
+                <option value="" selected disabled>--Seleccionar--</option>
+                <option data-content="<span class='badge badge-lg badge-success'>Enviado</span>"></option>
+                <option data-content="<span class='badge badge-lg badge-warning'>Pendiente</span>"></option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6 pt-md-0 pt-3 mt-md-4"> <label for="dateQuoteField">Fecha de envío</label> <input type="date" value="" min="2020-01-01" name="dateField"></div>
+
+    <div class="col-md-6 pt-md-0 pt-3 mt-md-4">
+        <label for="statusPaymentField">Status de pago</label>
+        <div class="arrow">
+            <select name="statusPaymentField" class="bg-light selectpicker">
+                <option value="" selected disabled>--Seleccionar--</option>
+                <option data-content="<span class='badge badge-lg badge-success'>Pagado</span>"></option>
+                <option data-content="<span class='badge badge-lg badge-warning'>Pendiente</span>"></option>
+                <option data-content="<span class='badge badge-lg badge-danger'>Rechazado</span>"></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6 pt-md-0 pt-3 mt-md-4"> <label for="datePaymentField">Fecha de pago de servicio</label> <input type="date" value="" min="2020-01-01" name="firtsContDateField"></div>
+
+    <div class="col-md-6 pt-md-0 pt-3 mt-md-4">
+        <label for="idPaymentField">ID de pago:</label> <div class="idPaymentField" style="text-align:left; font-size:medium;"><strong>000001</strong></div>
+
+    </div>
+    <div class="col-md-12 pt-md-0 pt-3 mt-4"> <label for="comments2">Observaciones</label> <textarea class="bg-light form-control comments2"></textarea></div>
+
+</div>

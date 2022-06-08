@@ -1,0 +1,65 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.megamenu {
+    position: static
+}
+
+    .megamenu .dropdown-menu {
+        background: none;
+        border: none;
+        width: 100%
+    }
+
+
+.logoBanner {
+    width: auto;
+    height: 45px;
+}
+
+body {
+    background: #eaafc8;
+    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+    background: linear-gradient(to right, #eaafc8, #654ea3);
+    min-height: 100vh
+}
+
+
+
+.text-uppercase {
+    letter-spacing: 0.08em
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .hide {
+        display: block;
+    }
+
+}
+
+
+
+@media (max-width: 992px) {
+    #logoBannerDropdown {
+        display: none !important;
+    }
+}
+
+.container {
+    height:auto !important;
+}
+

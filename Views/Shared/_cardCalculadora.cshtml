@@ -1,0 +1,25 @@
+﻿@Styles.Render("~/Content/cardCalculadora.css")
+
+<style>
+    .cardCalculadora .btn:hover {
+        background-color: #5e279a;
+        border: #5e279a;
+    }
+</style>
+
+<div class="container cardCalculadora my-5">
+    <div class="row">
+        <div class="col-md-6 " id="image" style=" background-color: #7d45ee;"> <img src="https://www.freepnglogos.com/uploads/cursor-png/cursor-mouse-arrow-transparent-png-stickpng-15.png" alt="" id="clic"> </div>
+        <div class="col-md-6">
+            <div id="info" class="pt-md-4">
+                <div id="mobile-clic"> <img src="https://www.freepnglogos.com/uploads/cursor-png/cursor-mouse-arrow-transparent-png-stickpng-15.png" alt=""> </div>
+                <div class="h4">Revisa los</div>
+                <div class="offer font-weight-bold mb-lg-2 mb-3"><i>planes de pago</i></div>
+                <div class="h4">que tenemos</div>
+                <div class="h4">para tí</div>
+                <div class="pt-5 coupon"> <i>Usa nuestro cotizador online</i> </div>
+                <a class="btn rounded mt-3 text-white" href="@Url.Action("Cotizador","Home")">¡ENTRA YA!</a>
+            </div>
+        </div>
+    </div>
+</div>

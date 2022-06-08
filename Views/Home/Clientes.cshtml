@@ -1,0 +1,281 @@
+﻿
+@{
+    ViewBag.Title = "Clientes";
+    @Styles.Render("~/Content/clientesStyle.css");
+    @Styles.Render("~/Content/webPixel.css");
+    @Styles.Render("~/Content/dataTables.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+}
+
+<div class="container py-4 bg-white" id="clientes">
+
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Home</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspClientes</span></li>
+            </ol>
+        </nav>
+
+    </div>
+
+    <div class=" flex-grow-1 overflow-visible">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight" id="titleCRM">Clientes</h1>
+                        </div> <!-- Actions -->
+
+                    </div> <!-- Nav -->
+                    <ul class="nav nav-tabs mt-4 overflow-x border-0" id="navHor">
+
+                        <li class="nav-item "> <a href='@Url.Action("Prospectos","Home")' class="nav-link font-regular">Prospectos</a> </li>
+                        <li class="nav-item "> <a href='@Url.Action("Cotizaciones","Home")' class="nav-link font-regular">Cotizaciones</a> </li>
+                        <li class="nav-item "> <a href="#" class="nav-link active">Clientes</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </header> <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+
+
+                @Html.Partial("_dashboardContador")
+
+                <div class="card shadow border-0 mb-7 pl-2 pr-2">
+                    <div class="card-header row">
+                        <div class="col-12 col-sm-6">
+                            <h4>Registros</h4>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <input type="text" id="myInputSearch" onkeyup="myFilterFunction()" placeholder="Busca por razón social..." title="Type in a name">
+
+                        </div>
+
+                        <div class="col-12 p-2">
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="idField" checked><span>ID</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="telField"><span>Teléfono</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="addresField"><span>Dirección</span></label>
+                            </div>
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="mailField"><span>E-mail</span></label>
+                            </div>
+
+                            <div class="ck-button">
+                                <label><input type="checkbox" value="1" name="transactionField"><span>#Transacciones</span></label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-nowrap display" id="prospectsRegister" data-toggle="table" data-search="true" data-filter-control="true">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th onclick="sortTable(0)" class="idField">
+                                        ID
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(0)" class="nameField">
+                                        Razón social
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(1)" class="firtsDateField">
+                                        Fecha de registro
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(2)" class="telField">
+                                        Teléfono
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(3)" class="addresField">
+                                        Dirección
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(4)" class="mailField">
+                                        E-mail
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+                                    <th onclick="sortTable(5)" class="transactionField">
+                                        # Transacciones
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                        </svg>
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="idField">1</td>
+                                    <td class="nameField">Aduanas SA de CV</td>
+                                    <td class="firtsDateField text-center"> 2016-12-10 </td>
+                                    <td class="telField text-center">2725630584</td>
+                                    <td class="addresField">AVE LOPEZ MATEOS 935</td>
+                                    <td class="mailField">example@mail.com</td>
+                                    <td class="transactionField text-center">4</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("historialCliente","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="idField">2</td>
+                                    <td class="nameField">Oxxo</td>
+                                    <td class="firtsDateField text-center"> 2019-06-10 </td>
+                                    <td class="telField text-center">2725630745</td>
+                                    <td class="addresField">Circunvalación 566</td>
+                                    <td class="mailField">contacto@mail.com</td>
+                                    <td class="transactionField text-center">7</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("historialCliente","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="idField">3</td>
+                                    <td class="nameField">Google</td>
+                                    <td class="firtsDateField text-center"> 2020-01-10 </td>
+                                    <td class="telField text-center">2725635687</td>
+                                    <td class="addresField">Avenida 5 #564</td>
+                                    <td class="mailField">mail@gmail.com</td>
+                                    <td class="transactionField text-center">11</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("historialCliente","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="idField">4</td>
+                                    <td class="nameField">Walt Mark</td>
+                                    <td class="firtsDateField text-center"> 2021-08-18 </td>
+                                    <td class="telField text-center"> 2725638974</td>
+                                    <td class="addresField">Calle 5 #98</td>
+                                    <td class="mailField">contacto@mail.com</td>
+                                    <td class="transactionField text-center">18</td>
+                                    <td class="text-end ">
+                                        <a href="@Url.Action("historialCliente","Home")" class="btn btn-sm btn-neutral">Ver</a>
+                                        <a href="#deleteEmployeeModal" data-toggle="modal" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer border-0 py-5"> <span class="text-muted text-sm">Mostrando 10 registros de <br />250 resultados encontrados</span> </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<div id="deleteEmployeeModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar datos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que quieres eliminar los datos de esta persona?</p>
+                    <p class="text-warning"><small>Esta acción no podrá ser deshecha.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/sortTableHeaderScript.js")
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/boosted/4.1.1/js/boosted.bundle.min.js'></script>
+
+
+
+<script>
+    function myFilterFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInputSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("prospectsRegister");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    $("input:checkbox:not(:checked)").each(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).hide();
+    });
+
+    $("input:checkbox").click(function () {
+        var column = "table ." + $(this).attr("name");
+        $(column).toggle();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
